@@ -1,9 +1,9 @@
 {
-    "name": "jadekun/sku",
+    "name": "mitesoro/sku",
     "description": "",
     "type": "library",
     "keywords": ["laravel-admin", "extension"],
-    "homepage": "https://github.com/jade-kun/sku",
+    "homepage": "https://github.com/mitesoro/sku",
     "license": "MIT",
     "authors": [
         {
