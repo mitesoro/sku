@@ -37,6 +37,8 @@ class SkuServiceProvider extends ServiceProvider
 
         Admin::booting(function () {
             Form::extend('sku', SkuField::class);
+            Admin::js('../../../vendor/jadekun/sku/sku.js');
+            Admin::css('../../../vendor/jadekun/sku/sku.css');
         });
     }
 }

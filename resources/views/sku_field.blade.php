@@ -31,10 +31,10 @@
                                             <input type="text" class="form-control">
                                         </div>
                                         <span class="btn btn-danger Js_remove_attr_val"><i
-                                                class="glyphicon glyphicon-remove"></i></span>
+                                                class="glyphicon glyphicon-remove">-</i></span>
                                     </div>
                                     <div class="sku_attr_val_item Js_add_attr_val" style="padding-left: 10px">
-                                        <span class="btn btn-success"><i class="glyphicon glyphicon-plus"></i></span>
+                                        <span class="btn btn-success"><i class="glyphicon glyphicon-plus">+</i></span>
                                     </div>
                                 </div>
                             </td>
