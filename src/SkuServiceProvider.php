@@ -3,6 +3,7 @@
 namespace JadeKun\Sku;
 
 use Encore\Admin\Admin;
+use Encore\Admin\Assets;
 use Encore\Admin\Form;
 use Illuminate\Support\ServiceProvider;
 
@@ -28,10 +29,14 @@ class SkuServiceProvider extends ServiceProvider
             );
         }
 
+        Assets::define('sku', [
+            'js'     => public_path('vendor/jadekun/sku/sku.js'),
+            'css'     => public_path('vendor/jadekun/sku/sku.css'),
+            'export' => 'sku',
+        ]);
+
         Admin::booting(function () {
             Form::extend('sku', SkuField::class);
-            Admin::js('vendor/jadekun/sku/sku.js');
-            Admin::css('vendor/jadekun/sku/sku.css');
         });
     }
 }
