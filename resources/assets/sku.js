@@ -51,28 +51,62 @@
         });
 
         // 绑定添加属性名事件
-        _this.warp.find('.Js_add_attr_name').click(function () {
-            let html = '<tr>' +
-                '<td><input type="text" class="form-control"></td>' +
-                '<td>' +
-                '<div class="sku_attr_val_warp">' +
-                '<div class="sku_attr_val_item">' +
-                '<div class="sku_attr_val_input">' +
-                '<input type="text" class="form-control">' +
-                '</div>' +
-                '<span class="btn btn-danger Js_remove_attr_val"><i class="glyphicon glyphicon-remove">-</i></span>' +
-                '</div>' +
-                '<div class="sku_attr_val_item Js_add_attr_val" style="padding-left:10px">' +
-                '<span class="btn btn-success"><i class="glyphicon glyphicon-plus">+</i></span>' +
-                '</div>' +
-                '</div>' +
-                '</td>' +
-                '<td>' +
-                '<span class="btn btn-danger Js_remove_attr_name">移除</span>' +
-                '</td>' +
-                '</tr>';
-            _this.warp.find('.sku_attr_key_val tbody').append(html)
-        });
+        let old_val_as = _this.warp.find('.Js_sku_input').val();
+        if (old_val_as) {
+            var jsarr=JSON.parse( old_val_as );
+            let n = Object.keys(jsarr.attrs).length
+            for (i = 0;i< n - 1;i++) {
+                // 绑定添加属性名事件
+                _this.warp.find('.Js_add_attr_name').click(function () {
+                    let html = '<tr>' +
+                        '<td><input type="text" class="form-control"></td>' +
+                        '<td>' +
+                        '<div class="sku_attr_val_warp">' +
+                        '<div class="sku_attr_val_item">' +
+                        '<div class="sku_attr_val_input">' +
+                        '<input type="text" class="form-control">' +
+                        '</div>' +
+                        '<span class="btn btn-danger Js_remove_attr_val"><i class="glyphicon glyphicon-remove">-</i></span>' +
+                        '</div>' +
+                        '<div class="sku_attr_val_item Js_add_attr_val" style="padding-left:10px">' +
+                        '<span class="btn btn-success"><i class="glyphicon glyphicon-plus">+</i></span>' +
+                        '</div>' +
+                        '</div>' +
+                        '</td>' +
+                        '<td>' +
+                        '<span class="btn btn-danger Js_remove_attr_name">移除</span>' +
+                        '</td>' +
+                        '</tr>';
+                    _this.warp.find('.sku_attr_key_val tbody').append(html)
+                });
+            }
+
+
+        } else {
+            // 绑定添加属性名事件
+            _this.warp.find('.Js_add_attr_name').click(function () {
+                let html = '<tr>' +
+                    '<td><input type="text" class="form-control"></td>' +
+                    '<td>' +
+                    '<div class="sku_attr_val_warp">' +
+                    '<div class="sku_attr_val_item">' +
+                    '<div class="sku_attr_val_input">' +
+                    '<input type="text" class="form-control">' +
+                    '</div>' +
+                    '<span class="btn btn-danger Js_remove_attr_val"><i class="glyphicon glyphicon-remove">-</i></span>' +
+                    '</div>' +
+                    '<div class="sku_attr_val_item Js_add_attr_val" style="padding-left:10px">' +
+                    '<span class="btn btn-success"><i class="glyphicon glyphicon-plus">+</i></span>' +
+                    '</div>' +
+                    '</div>' +
+                    '</td>' +
+                    '<td>' +
+                    '<span class="btn btn-danger Js_remove_attr_name">移除</span>' +
+                    '</td>' +
+                    '</tr>';
+                _this.warp.find('.sku_attr_key_val tbody').append(html)
+            });
+        }
 
         // 绑定移除属性名事件
         _this.warp.find('.sku_attr_key_val').on('click', '.Js_remove_attr_name', function () {
